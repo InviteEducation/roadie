@@ -223,7 +223,7 @@ module Roadie
 
       def all_link_elements_to_be_inlined_with_url
         all_link_elements_with_url.reject do |link, url|
-          absolute_path_url = (url.host or url.path.nil?)
+          absolute_path_url = false
           blacklisted_element = (link['media'] == 'print' or link['data-immutable'])
 
           absolute_path_url or blacklisted_element
